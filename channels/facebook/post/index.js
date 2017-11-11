@@ -108,6 +108,12 @@ function postFacebook(params, postUrl, accessToken) {
  *  @return JSON containing all and only the parameter that Facebook /v2.6/me/messages
  *  graph API needs
  */
+{
+    "recipient":{
+          "id":"USER_ID"
+    },
+    "sender_action":"typing_on" // typing_off
+}
 function extractFacebookParams(params) {
   const facebookParams = omit(params, [
     'page_access_token',
